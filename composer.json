@@ -10,11 +10,14 @@
     }
   },
   "require-dev": {
-    "phpunit/phpunit": "^8"
+    "phpunit/phpunit": "^8",
+    "friendsofphp/php-cs-fixer": "^2.16"
   },
   "scripts": {
     "test": [
+      "@phpcs",
       "./vendor/bin/phpunit tests"
-    ]
+    ],
+    "phpcs": "php-cs-fixer fix"
   }
 }
