@@ -1,6 +1,6 @@
 <?php
 
-namespace Test\Utils;
+namespace Test;
 
 use App\Endpoints\EndpointInterface;
 use GuzzleHttp\Client;

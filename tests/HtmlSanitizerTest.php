@@ -3,7 +3,7 @@
 
 namespace Test;
 
-use App\Sanitize\HtmlSanitizer;
+use App\Sanitizers\HtmlSanitizer;
 use PHPUnit\Framework\TestCase;
 
 class HtmlSanitizerTest extends TestCase

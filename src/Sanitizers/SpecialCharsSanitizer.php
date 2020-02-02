@@ -1,11 +1,11 @@
 <?php
 
 
-namespace App\Sanitize;
+namespace App\Sanitizers;
 
 class SpecialCharsSanitizer implements SanitizerInterface
 {
-    const CANDIDATES = ['!','@', '#', '$', '%','^','&',  '*'];
+    const CANDIDATES = ['!', '@', '#', '$', '%', '^', '&', '*'];
 
     public function sanitize(string $string): string
     {

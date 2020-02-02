@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Sanitize;
+namespace App\Sanitizers;
 
 interface SanitizerInterface
 {

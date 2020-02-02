@@ -7,7 +7,6 @@ use App\Input;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
 use RuntimeException;
-use Test\Utils\MockEndpointFactory;
 
 class JsonPlaceHolderEndpointTest extends TestCase
 {

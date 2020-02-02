@@ -3,7 +3,7 @@
 
 namespace Test;
 
-use App\Sanitize\SpecialCharsSanitizer;
+use App\Sanitizers\SpecialCharsSanitizer;
 use PHPUnit\Framework\TestCase;
 
 class SpecialCharsSanitizerTest extends TestCase

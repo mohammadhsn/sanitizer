@@ -2,7 +2,7 @@
 
 
 use App\Input;
-use App\Sanitize\SanitizerInterface;
+use App\Sanitizers\SanitizerInterface;
 use PHPUnit\Framework\TestCase;
 
 class InputTest extends TestCase

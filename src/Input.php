@@ -3,7 +3,7 @@
 
 namespace App;
 
-use App\Sanitize\SanitizerInterface;
+use App\Sanitizers\SanitizerInterface;
 
 class Input
 {
