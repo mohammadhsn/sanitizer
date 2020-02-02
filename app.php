@@ -1,9 +1,10 @@
 <?php
 
+use App\Application;
 use App\Endpoints\JsonPlaceHolderEndpoint;
 use App\Input;
-use App\Sanitize\HtmlSanitizer;
-use App\Sanitize\SpecialCharsSanitizer;
+use App\Sanitizers\HtmlSanitizer;
+use App\Sanitizers\SpecialCharsSanitizer;
 
 require 'vendor/autoload.php';
 
@@ -17,8 +18,6 @@ $input = new Input($argv[1]);
 $input->addSanitizer(new HtmlSanitizer())
     ->addSanitizer(new SpecialCharsSanitizer());
 
-$response = JsonPlaceHolderEndpoint::instance()
-    ->setInput($input)
-    ->submit();
 
-var_dump(json_decode($response->getBody()->getContents(), true));
+$app = new Application($input, JsonPlaceHolderEndpoint::instance());
+$app->run();
