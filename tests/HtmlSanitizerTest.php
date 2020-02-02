@@ -1,13 +1,18 @@
 <?php
 
 
-class HtmlSanitizerTest extends \PHPUnit\Framework\TestCase
+namespace Test;
+
+use App\Sanitize\HtmlSanitizer;
+use PHPUnit\Framework\TestCase;
+
+class HtmlSanitizerTest extends TestCase
 {
     private $sanitizer;
 
     public function setUp(): void
     {
-        $this->sanitizer = new \App\Sanitize\HtmlSanitizer();
+        $this->sanitizer = new HtmlSanitizer();
     }
 
     public function test_it_removes_simple_tag()
