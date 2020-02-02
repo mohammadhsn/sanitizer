@@ -3,7 +3,6 @@
 
 namespace Test;
 
-
 use App\Sanitize\SpecialCharsSanitizer;
 use PHPUnit\Framework\TestCase;
 
@@ -19,44 +18,51 @@ class SpecialCharsSanitizerTest extends TestCase
     public function test_it_removes_special_chars_separately()
     {
         $this->assertStringNotContainsString(
-            $this->sanitizer->sanitize("he!!o world!"), "!"
+            $this->sanitizer->sanitize('he!!o world!'),
+            '!'
         );
 
         $this->assertStringNotContainsString(
-            $this->sanitizer->sanitize("preg@gmail.@com@"), "@"
+            $this->sanitizer->sanitize('preg@gmail.@com@'),
+            '@'
         );
 
         $this->assertStringNotContainsString(
-            $this->sanitizer->sanitize('$name=page*$*'), "$"
+            $this->sanitizer->sanitize('$name=page*$*'),
+            '$'
         );
 
         $this->assertStringNotContainsString(
-            $this->sanitizer->sanitize('78%2=0'), "%"
+            $this->sanitizer->sanitize('78%2=0'),
+            '%'
         );
 
         $this->assertStringNotContainsString(
-            $this->sanitizer->sanitize('^name=moc^k^^'), "^"
+            $this->sanitizer->sanitize('^name=moc^k^^'),
+            '^'
         );
 
         $this->assertStringNotContainsString(
-            $this->sanitizer->sanitize('a&b=b&&a'), "&"
+            $this->sanitizer->sanitize('a&b=b&&a'),
+            '&'
         );
 
         $this->assertStringNotContainsString(
-            $this->sanitizer->sanitize('*ru*ko**'), "*@"
+            $this->sanitizer->sanitize('*ru*ko**'),
+            '*@'
         );
     }
-
 
     public function test_it_removes_special_chars_together()
     {
         $this->assertStringNotContainsString(
-            $this->sanitizer->sanitize('^y_name_is_@mohammad!!'), "*@"
+            $this->sanitizer->sanitize('^y_name_is_@mohammad!!'),
+            '*@'
         );
 
         $this->assertStringNotContainsString(
-            $this->sanitizer->sanitize('$What&is**y^ours!!'), "*!$&@"
+            $this->sanitizer->sanitize('$What&is**y^ours!!'),
+            '*!$&@'
         );
     }
-
 }
